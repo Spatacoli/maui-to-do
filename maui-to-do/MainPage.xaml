@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:maui_to_do.Models"
+             x:Class="maui_to_do.MainPage">
+
+    <CollectionView>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type models:ActionItem}">
+                <models:ActionItem 
+                    ID="0"
+                    Title="Install .NET MAUI"
+                    IsCompleted="True"/>
+                <models:ActionItem 
+                    ID="1"
+                    Title="Start a Demo App"
+                    IsCompleted="True"/>
+                <models:ActionItem 
+                    ID="2"
+                    Title="Make To-Do app"
+                    IsCompleted="False"/>
+                <models:ActionItem 
+                    ID="3"
+                    Title="Get To-Do working on Android, iOS, and Mac"
+                    IsCompleted="False"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:ActionItem">
+                <HorizontalStackLayout Padding="10">
+                    <CheckBox IsChecked="{Binding IsCompleted}" />
+                    <Label VerticalOptions="Center" Text="{Binding Title}" />
+                </HorizontalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+ 
+</ContentPage>
