@@ -1,12 +1,13 @@
-﻿namespace maui_to_do;
+﻿using maui_to_do.ViewModels;
+
+namespace maui_to_do;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
+		BindingContext = new MainViewModel();
 	}
 }
 
