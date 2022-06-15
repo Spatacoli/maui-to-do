@@ -4,10 +4,10 @@ namespace maui_to_do;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+	public MainPage(MainViewModel mvm)
 	{
 		InitializeComponent();
-		BindingContext = new MainViewModel();
+		BindingContext = mvm;
 	}
 }
 

@@ -1,4 +1,6 @@
-﻿namespace maui_to_do;
+﻿using maui_to_do.ViewModels;
+
+namespace maui_to_do;
 
 public static class MauiProgram
 {
@@ -12,6 +14,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		builder.Services.AddSingleton<MainViewModel>();
 
 		return builder.Build();
 	}
