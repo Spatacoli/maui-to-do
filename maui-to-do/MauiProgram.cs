@@ -1,4 +1,5 @@
-﻿using maui_to_do.ViewModels;
+﻿using maui_to_do.Services;
+using maui_to_do.ViewModels;
 
 namespace maui_to_do;
 
@@ -15,7 +16,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		builder.Services.AddSingleton<MainPage>();
+		var dbPath = Path.Combine(FileSystem.AppDataDirectory, "ActionItems.db3");
+		builder.Services.AddSingleton(s => ActivatorUtilities.CreateInstance<ActionItemRepository>(s, dbPath));
+        builder.Services.AddSingleton<MainPage>();
 		builder.Services.AddSingleton<MainViewModel>();
 
 		return builder.Build();
