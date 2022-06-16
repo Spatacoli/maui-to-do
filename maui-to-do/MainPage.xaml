@@ -5,9 +5,14 @@
              xmlns:viewmodels="clr-namespace:maui_to_do.ViewModels"
              x:Class="maui_to_do.MainPage"
              x:DataType="viewmodels:MainViewModel">
-    <Grid RowDefinitions="auto,*">
-        <Button Text="Load Data" Command="{Binding GetActionItemsCommand}" />
-        <CollectionView ItemsSource="{Binding Items}" Grid.Row="1">
+    <Grid RowDefinitions="100,auto,*">
+        <Grid ColumnDefinitions="100,*,100">
+            <CheckBox IsChecked="{Binding IsComplete}" />
+            <Entry Text="{Binding Title}" Grid.Column="1" />
+            <Button Text="Add Item" Command="{Binding AddActionItemCommand}" Grid.Column="2" />
+        </Grid>
+        <Button Text="Load Data" Command="{Binding GetActionItemsCommand}" Grid.Row="1" />
+        <CollectionView ItemsSource="{Binding Items}" Grid.Row="2">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:ActionItem">
                     <HorizontalStackLayout Padding="10">
