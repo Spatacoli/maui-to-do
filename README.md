@@ -10,6 +10,7 @@ This is the To-Do .NET MAUI app that I am working on for my .NET MAUI Blog post 
 - [.NET MAUI Main Page](https://spatacoli.com/blog/2022/06/maui-main-page/)
 - [.NET MAUI MVVM](https://spatacoli.com/blog/2022/06/maui-mvvm/)
 - [.NET MAUI Dependency Injection](https://spatacoli.com/blog/2022/06/maui-di/)
+- [.NET MAUI Services](https://spatacoli.com/blog/2022/06/maui-services/)
 
 Let me know what you think. And if you have any questions or problems let me know.
 
